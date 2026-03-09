@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Столярный цех в Актау - изготовление мебели под заказ. Кухни, шкафы, столы. Прямая доставка.">
+    <title>Столярный Цех Актау | Мебель на заказ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #171717;
+            border-bottom: 1px solid #262626;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f59e0b;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: #a3a3a3;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #d4d4d4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f59e0b;
+        }
+
+        .contact-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .phone {
+            color: #f59e0b;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .location {
+            color: #a3a3a3;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .messenger-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .messenger-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .messenger-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .messenger-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp .messenger-icon {
+            background-color: #25D366;
+        }
+
+        .whatsapp:hover .messenger-icon {
+            background-color: #20BA5A;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .telegram .messenger-icon {
+            background-color: #0088cc;
+        }
+
+        .telegram:hover .messenger-icon {
+            background-color: #0077b5;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+        }
+
+        .call .messenger-icon {
+            background-color: #f59e0b;
+        }
+
+        .call:hover .messenger-icon {
+            background-color: #d97706;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .messenger-label {
+            font-size: 10px;
+            color: #a3a3a3;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            background-image: url('https://images.unsplash.com/photo-1641893979088-87d4d9604c36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJwZW50ZXIlMjB3b3JraW5nJTIwd29vZCUyMHRhYmxlfGVufDF8fHx8MTc3MjcyMTA5Nnww&ixlib=rb-4.1.0&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 700px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: #d4d4d4;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(217, 119, 6, 0.5);
+            }
+        }
+
+        .warning-box p {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+            color: white;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #b45309, #d97706);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-dark {
+            background-color: #171717;
+        }
+
+        .section-black {
+            background-color: #000;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title p {
+            font-size: 20px;
+            color: #a3a3a3;
+        }
+
+        /* How We Work */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, #262626, #1a1a1a);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #404040;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d97706, #f59e0b);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: #d97706;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(217, 119, 6, 0.2);
+        }
+
+        .step-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .step-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+        }
+
+        .step-card h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .step-card p {
+            color: #a3a3a3;
+            line-height: 1.6;
+        }
+
+        .info-banner {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin: 24px auto;
+            display: block;
+            text-align: center;
+            max-width: fit-content;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 1;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Advantages */
+        .important-box {
+            background: linear-gradient(135deg, #262626, #1a1a1a);
+            padding: 32px;
+            border-radius: 12px;
+            border: 2px solid #d97706;
+            margin-top: 48px;
+            display: flex;
+            gap: 20px;
+            align-items: start;
+            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.2);
+        }
+
+        .important-icon {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 32px;
+            height: fit-content;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+        }
+
+        .important-box h3 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #f59e0b;
+        }
+
+        .important-box p {
+            font-size: 18px;
+            color: #d4d4d4;
+            line-height: 1.8;
+        }
+
+        /* Order Form */
+        .form-container {
+            background: linear-gradient(135deg, #171717, #0a0a0a);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #262626;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #f59e0b;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 8px;
+            border: 1px solid #404040;
+            background-color: #262626;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #b45309, #d97706);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(217, 119, 6, 0.4);
+        }
+
+        .form-note {
+            text-align: center;
+            color: #a3a3a3;
+            font-size: 14px;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #171717;
+            padding: 48px 0 24px;
+            border-top: 1px solid #262626;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            color: #f59e0b;
+            margin-bottom: 16px;
+            font-weight: bold;
+        }
+
+        .footer-section p {
+            color: #a3a3a3;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #d4d4d4;
+        }
+
+        .footer-contact a {
+            color: #d4d4d4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact a:hover {
+            color: #f59e0b;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid #262626;
+            color: #a3a3a3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .form-container {
+                padding: 24px;
+            }
+
+            .contact-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .messenger-icons {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .important-box {
+                flex-direction: column;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Столярный Цех</h1>
+                    <span>Актау</span>
+                </div>
+                
+                <nav>
+                    <a href="#home">Главная</a>
+                    <a href="#how-we-work">Как мы работаем</a>
+                    <a href="#gallery">Наши работы</a>
+                    <a href="#advantages">Преимущества</a>
+                    <a href="#order">Заказать</a>
+                </nav>
+                
+                <div class="contact-header">
+                    <div class="contact-info">
+                        <div class="phone">📞 +7 (705) 434-16-93</div>
+                        <div class="location">📍 Актау, Казахстан</div>
+                    </div>
+                    
+                    <div class="messenger-icons">
+                        <a href="https://wa.me/77054341693" target="_blank" rel="noopener noreferrer" class="messenger-btn whatsapp">
+                            <div class="messenger-icon">💬</div>
+                            <span class="messenger-label">WhatsApp</span>
+                        </a>
+                        <a href="https://t.me/seller_seller6" target="_blank" rel="noopener noreferrer" class="messenger-btn telegram">
+                            <div class="messenger-icon">✈️</div>
+                            <span class="messenger-label">Telegram</span>
+                        </a>
+                        <a href="tel:+77054341693" class="messenger-btn call">
+                            <div class="messenger-icon">📞</div>
+                            <span class="messenger-label">Позвонить</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Мебель под заказ в Актау</h2>
+                <p>Изготовим любую мебель по вашим размерам и пожеланиям</p>
+                <div class="warning-box">
+                    <p>⚠️ Работаем ТОЛЬКО на заказ. Готовой мебели в наличии нет!</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#order" class="btn btn-primary">Сделать заказ</a>
+                    <a href="#how-we-work" class="btn btn-secondary">Как мы работаем</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-we-work" class="section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Как мы работаем</h2>
+                <p>Прямой заказ от производителя - без посредников</p>
+                <div class="info-banner">
+                    📦 Готовых товаров в наличии нет - изготавливаем только под заказ!
+                </div>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">💬</div>
+                    <h3>1. Консультация</h3>
+                    <p>Вы связываетесь с нами по телефону, WhatsApp или Telegram. Обсуждаем ваши пожелания и идеи.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">📏</div>
+                    <h3>2. Замеры и дизайн</h3>
+                    <p>Выезжаем на объект, делаем точные замеры, создаём дизайн-проект мебели специально для вас.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🔨</div>
+                    <h3>3. Изготовление</h3>
+                    <p>Производим мебель в нашей мастерской под ваш заказ из качественных материалов.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🚚</div>
+                    <h3>4. Доставка и установка</h3>
+                    <p>Доставляем и устанавливаем готовую мебель на вашем объекте. Гарантия качества.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section-black">
+        <div class="container">
+            <div class="section-title">
+                <h2>Примеры наших работ</h2>
+                <p>Каждое изделие создаётся индивидуально под заказ</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1678108040468-0cc9addd984d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Кухонные гарнитуры">
+                    <div class="gallery-overlay">
+                        <h3>Кухонные гарнитуры</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1682450195449-32ab08ddf7e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Шкафы-купе">
+                    <div class="gallery-overlay">
+                        <h3>Шкафы-купе</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1629085281900-455f2f1fc5ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Столы и стулья">
+                    <div class="gallery-overlay">
+                        <h3>Столы и стулья</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1768946131535-b90bad125f16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Спальные гарнитуры">
+                    <div class="gallery-overlay">
+                        <h3>Спальные гарнитуры</h3>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <p style="color: #a3a3a3; font-size: 18px;">
+                    💼 Также изготавливаем: прихожие, офисную мебель, детскую мебель, встроенные конструкции
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши преимущества</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">✓</div>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Учитываем все ваши пожелания по дизайну, размерам и материалам. Создаём мебель, идеально подходящую для вашего помещения.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🔧</div>
+                    <h3>Собственное производство</h3>
+                    <p>Прямой заказ от производителя - работаем без посредников. Это позволяет предлагать лучшие цены.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🚚</div>
+                    <h3>Доставка по Актау</h3>
+                    <p>Доставим и установим готовую мебель по указанному адресу в удобное для вас время.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🛡️</div>
+                    <h3>Гарантия качества</h3>
+                    <p>Используем только качественные материалы и фурнитуру. Предоставляем гарантию на все работы.</p>
+                </div>
+            </div>
+            <div class="important-box">
+                <div class="important-icon">⚡</div>
+                <div>
+                    <h3>Важно знать!</h3>
+                    <p>В нашем столярном цехе нет готовой мебели на складе. Мы работаем исключительно под заказ, что позволяет создавать мебель точно по вашим размерам и требованиям. Сроки изготовления обсуждаются индивидуально и зависят от сложности проекта.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="section-black">
+        <div class="container">
+            <div class="section-title">
+                <h2>Оформить заказ</h2>
+                <p>Оставьте заявку и мы свяжемся с вами для обсуждения деталей</p>
+            </div>
+            <div class="form-container">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__">
+                    </div>
+                    <div class="form-group">
+                        <label for="furniture">Тип мебели *</label>
+                        <select id="furniture" name="furniture" required>
+                            <option value="">Выберите тип мебели</option>
+                            <option value="kitchen">Кухонный гарнитур</option>
+                            <option value="wardrobe">Шкаф-купе</option>
+                            <option value="bedroom">Спальный гарнитур</option>
+                            <option value="table">Стол / Стулья</option>
+                            <option value="hallway">Прихожая</option>
+                            <option value="office">Офисная мебель</option>
+                            <option value="children">Детская мебель</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Описание заказа</label>
+                        <textarea id="message" name="message" placeholder="Опишите ваши пожелания: размеры, материалы, цвет и другие детали"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">📧 Отправить заявку</button>
+                    <p class="form-note">
+                        После отправки заявки наш менеджер свяжется с вами в течение 1 часа для уточнения деталей и расчёта стоимости
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Столярный Цех</h3>
+                    <p>Изготовление мебели под заказ в Актау. Индивидуальный подход к каждому клиенту. Качественные материалы и профессиональная работа.</p>
+                    <p style="color: #f59e0b; font-weight: 600; margin-top: 16px;">⚠️ Работаем только на заказ</p>
+                
+                    <div style="display: flex; gap: 12px; margin-top: 20px;">
+                        <a href="https://wa.me/77054341693" target="_blank" rel="noopener noreferrer" class="messenger-btn whatsapp">
+                            <div class="messenger-icon" style="width: 48px; height: 48px; font-size: 24px;">💬</div>
+                            <span class="messenger-label">WhatsApp</span>
+                        </a>
+                        <a href="https://t.me/seller_seller6" target="_blank" rel="noopener noreferrer" class="messenger-btn telegram">
+                            <div class="messenger-icon" style="width: 48px; height: 48px; font-size: 24px;">✈️</div>
+                            <span class="messenger-label">Telegram</span>
+                        </a>
+                        <a href="tel:+77054341693" class="messenger-btn call">
+                            <div class="messenger-icon" style="width: 48px; height: 48px; font-size: 24px;">📞</div>
+                            <span class="messenger-label">Позвонить</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <div class="footer-contact">
+                        <span>📞</span>
+                        <a href="tel:+77054341693">+7 (705) 434-16-93</a>
+                    </div>
+                    <div class="footer-contact">
+                        <span>📧</span>
+                        <span>info@stolyarka-aktau.kz</span>
+                    </div>
+                    <div class="footer-contact">
+                        <span>📍</span>
+                        <span>г. Актау, Казахстан</span>
+                    </div>
+                    <div class="footer-contact" style="margin-top: 12px;">
+                        <span>🌐</span>
+                        <span>wood_aktay.com</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Режим работы</h3>
+                    <p>🕐 Пн-Пт: 9:00 - 18:00</p>
+                    <p>🕐 Сб: 10:00 - 16:00</p>
+                    <p>🕐 Вс: выходной</p>
+                    <p style="margin-top: 16px; font-size: 14px;">
+                        Принимаем заявки через сайт круглосуточно
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Столярный Цех Актау. Все права защищены.</p>
+                <p style="margin-top: 8px;">Мебель на заказ | Прямое производство | Доставка и установка</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const furniture = document.getElementById('furniture').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = `Новый заказ!\n\nИмя: ${name}\nТелефон: ${phone}\nТип мебели: ${furniture}\nОписание: ${message}`;
+            const whatsappUrl = `https://wa.me/77054341693?text=${encodeURIComponent(whatsappMessage)}`;
+        
+            alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.\n\nВы будете перенаправлены в WhatsApp для подтверждения заказа.');
+            
+            window.open(whatsappUrl, '_blank');
+            
+            this.reset();
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
